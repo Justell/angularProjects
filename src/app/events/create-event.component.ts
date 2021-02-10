@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { Router } from '@angular/router'
 
 @Component ({
 
@@ -10,11 +11,20 @@ import { Component } from '@angular/core'
             <br/>
             <br/>
             <button type="submit" class="btn btn-primary">Save</button>
-            <button type="button" class="btn btn-default">Cancel</button>
+            <button type="button" (click)="cancel()" class="btn btn-default">Cancel</button>
         </div>
     `
 })
 
 export class CreateEventComponent {
+
+    // inject router
+    constructor (private router:Router){
+
+    }
+    // when cancel button clicked, navigate to all events
+    cancel() {
+        this.router.navigate(['/events'])
+    }
 
 }
