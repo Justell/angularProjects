@@ -19,6 +19,8 @@ export interface ISession {
     id: number
     name: string
     presenter: string
-    duration: string
+    duration: number
     level: string
+    abstract: string
+    voters: string[]
 }

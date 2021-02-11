@@ -2,6 +2,7 @@ import { toBase64String } from '@angular/compiler/src/output/source_map'
 import { Component } from '@angular/core'
 import { EventService } from './shared/event.service'
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router'
+import { IEvent } from './shared/index'
 
 declare let toastr:any
 
@@ -20,9 +21,10 @@ declare let toastr:any
     `
   
 })
-export class EventsListComponent {
+export class EventsListComponent{
     
     events:any
+
     constructor(private eventService: EventService, private route: ActivatedRoute){
         this.events = this.eventService.getEvents()
     }
