@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { EventService } from './shared/event.service'
 
@@ -17,8 +17,8 @@ export class CreateEventComponent {
     isDirty:boolean = true
     // inject router
     constructor (private router:Router, private eventService:EventService){
-
     }
+
 
     saveEvent(formValues) {
         this.eventService.saveEvent(formValues)
